@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Internship Management System</title>
+</head>
+
+<body>
+
+<h1>Student Management</h1>
+
+<!-- Add Student -->
+<h2>Add Student</h2>
+
+<input type="text" id="name" placeholder="Enter Name"><br><br>
+<input type="email" id="email" placeholder="Enter Email"><br><br>
+<input type="password" id="password" placeholder="Enter Password"><br><br>
+
+<button onclick="addStudent()">Add Student</button>
+
+<p id="addMessage"></p>
+
+
+<!-- Get Students -->
+<h2>View Students</h2>
+
+<button onclick="getStudents()">Get Students</button>
+
+<pre id="studentsList"></pre>
+
+
+<!-- Delete Student -->
+<h2>Delete Student</h2>
+
+<input type="number" id="deleteId" placeholder="Enter Student ID"><br><br>
+
+<button onclick="deleteStudent()">Delete Student</button>
+
+<p id="deleteMessage"></p>
+
+
+
+<script>
+
+function addStudent() {
+
+let student = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    password: document.getElementById("password").value
+};
+
+fetch("http://localhost:8080/students", {
+
+method: "POST",
+headers: {
+"Content-Type": "application/json"
+},
+body: JSON.stringify(student)
+
+})
+
+.then(response => response.json())
+.then(data => {
+
+document.getElementById("addMessage").innerText =
+"Student added with ID: " + data.id;
+
+});
+
+}
+
+
+
+function getStudents() {
+
+fetch("http://localhost:8080/students")
+
+.then(response => response.json())
+
+.then(data => {
+
+document.getElementById("studentsList").innerText =
+JSON.stringify(data, null, 2);
+
+});
+
+}
+
+
+
+function deleteStudent() {
+
+let id = document.getElementById("deleteId").value;
+
+fetch("http://localhost:8080/students/" + id, {
+
+method: "DELETE"
+
+})
+
+.then(response => response.text())
+
+.then(data => {
+
+document.getElementById("deleteMessage").innerText = data;
+
+});
+
+}
+
+</script>
+
+</body>
+
+</html>
