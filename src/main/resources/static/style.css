@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #2c3e50, #4ca1af);
+}
+
+/* CONTAINER (SMALL + CENTERED) */
+.container {
+    width: 320px;              /* container width */
+    margin: 50px auto;
+    background: white;
+    padding: 18px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* HEADING (CONTRAST COLOR) */
+h2 {
+    color: #1abc9c;            
+    margin-bottom: 12px;
+}
+
+/* INPUT BOXES (SMALL WIDTH & HEIGHT) */
+input, textarea {
+    width: 95%;               /* reduced width for professional look */
+    padding: 6px;             /* smaller height */
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    font-size: 13px;
+    box-sizing: border-box;   /* ensures padding included in width */
+}
+
+/* TEXTAREA SPECIFIC HEIGHT */
+textarea {
+    height: 60px;             /* smaller height for description box */
+    resize: none;             /* disable resizing for neat look */
+}
+
+/* BUTTONS (SMALL + CLEAN) */
+button {
+    padding: 6px 12px;
+    margin: 5px 0;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #2980b9;
+}
+
+/* NEXT BUTTON DIFFERENT COLOR */
+.next-btn {
+    background: #27ae60;
+    margin-top: 8px;
+}

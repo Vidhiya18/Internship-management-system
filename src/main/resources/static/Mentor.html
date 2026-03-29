@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mentor Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="loadTasks()">
+
+<div class="container">
+
+    <h2>Mentor Dashboard</h2>
+
+    <!-- ADD MENTOR -->
+    <h3>Add Mentor</h3>
+    <input type="text" id="name" placeholder="Mentor Name">
+    <input type="email" id="email" placeholder="Email">
+    <input type="text" id="phone" placeholder="Phone Number">
+
+    <button onclick="addMentor()">Add Mentor</button>
+
+    <hr>
+
+    <!-- ASSIGN TASK -->
+    <h3>Assign Task</h3>
+    <input type="text" id="studentName" placeholder="Student Name">
+    <input type="text" id="taskTitle" placeholder="Task Title">
+    <input type="text" id="description" placeholder="Task Description">
+
+    <button onclick="assignTask()">Assign Task</button>
+
+    <hr>
+
+    <!-- LOAD TASK -->
+    <h3>All Tasks</h3>
+    <button onclick="loadTasks()">Load Tasks</button>
+
+    <table id="table" border="1" style="width:100%; margin-top:10px;"></table>
+
+    <hr>
+
+    <!-- FEEDBACK -->
+    <h3>Give Feedback</h3>
+    <input type="text" id="feedbackStudent" placeholder="Student Name">
+    <input type="text" id="feedbackText" placeholder="Feedback">
+
+    <button onclick="giveFeedback()">Submit Feedback</button>
+
+    <br><br>
+
+    <!-- NAVIGATION -->
+    <button onclick="goBack()">⬅ Back</button>
+    <button onclick="goAdmin()">Next ➡</button>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
