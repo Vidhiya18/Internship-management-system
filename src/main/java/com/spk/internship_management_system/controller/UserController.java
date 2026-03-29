@@ -3,7 +3,7 @@ package com.spk.internship_management_system.controller;
 import org.springframework.web.bind.annotation.*;
 import com.spk.internship_management_system.model.user;
 import com.spk.internship_management_system.repository.UserRepository;
-import java.util.List;   // ✅ THIS LINE FIXES ERROR
+import java.util.List;  
 
 @RestController
 @CrossOrigin("*")
